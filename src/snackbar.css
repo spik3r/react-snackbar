@@ -1,66 +1,74 @@
 
+.snackbar-positioner {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 .snackbar {
-  max-width: 250px;
+  width: 300px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  color: yellow;
+  color: gray;
   background-color: blue;
   padding: 8px;
   margin-bottom: 1px;
     border-radius: 9px;
 
-  opacity: 0;
-  animation: fadein 5s;
-  animation: bounceInLeft 5s;
+  animation: fadeIn 3s;
 
-  animation-delay: 2s;
   animation-fill-mode: forwards;
+
+      box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.16);
+      box-sizing: border-box;
+      color: white;
+          opacity: 0;
+          right: 20px;
   }
 
-  @-webkit-keyframes fadein {
-      from {bottom: 0; opacity: 0;}
-      to {bottom: 30px; opacity: 1;}
-  }
+    .snackbar_gone {
+      animation: fadeOut 1.5s;
+      animation-fill-mode: forwards;
+    }
 
-  @keyframes fadein {
-      from {bottom: 0; opacity: 0;}
-      to {bottom: 30px; opacity: 1;}
-  }
+    .snackbar_img {
+      width: 25px;
+      height: 25px;
+    }
 
-    @-webkit-keyframes bounceInLeft {
+    .snackbar_message {
+      font-size: 14px;
+      line-height: 1.2;
+    }
+
+    .snackbar_close {
+      height: 25px;
+      cursor: pointer;
+    }
+
+    @keyframes fadeOut {
       0% {
-         opacity: 0;
-         -webkit-transform: translateX(-2000px);
+        opacity: 0.65;
+        transform: translateX(-20px);
       }
-      60% {
-         opacity: 1;
-         -webkit-transform: translateX(30px);
-      }
-      80% {
-         -webkit-transform: translateX(-10px);
+      40% {
+        opacity: 0.5;
+        transform: translateX(-20px);
       }
       100% {
-            opacity: 1;
-
-         -webkit-transform: translateX(0);
+        opacity: 0;
+        transform: translateX(500px);
       }
     }
 
-     @keyframes bounceInLeft {
+    @keyframes fadeIn {
       0% {
-         opacity: 0;
-         -webkit-transform: translateX(-2000px);
+        opacity: 0;
+        transform: translateX(500px);
       }
-      60% {
-         opacity: 1;
-         -webkit-transform: translateX(30px);
-      }
-      80% {
-         -webkit-transform: translateX(-10px);
-      }
+
       100% {
-            opacity: 1;
-         -webkit-transform: translateX(0);
+        opacity: 0.65;
+        transform: translateX(-20px);
       }
     }
